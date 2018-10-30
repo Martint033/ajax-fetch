@@ -23,6 +23,7 @@ document.querySelector("form").addEventListener("submit", function(e){
         // On envoie la requète au serveur puis quand vient la reponse
         fetch(urlPHP, paramAjax).then(function(response){
             // On la convertis depuis son format json
+            // Astuce : si vous avez une erreur liés au contenu du json remplacé la ligne d'en desssous par : return response.text(); (c'est le contenu dans la réponse en brut, sans conversion) 
             return response.json();
             // Puis on traite la réponse
         }).then (function (response){
