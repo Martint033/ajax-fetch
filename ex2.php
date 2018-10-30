@@ -7,7 +7,7 @@ if( isset( $_POST['choixTable'] )){
         // Je récupère la valeur envoyé
         $choixTableUser = (int) $_POST['choixTable'];
         
-        // Je traite la valeur (ici je fait des multiplications pour retourner un tableau contenant toutes les valeurs de la table demandé
+        // Je traite la valeur (ici je fait des multiplications pour retourner un tableau contenant toutes les valeurs de la table demandé)
         for( $i = 1 ; $i < 11; $i++){
             $tab[] = $i ."*". $choixTableUser ." = ".( $i * $choixTableUser );
         }
