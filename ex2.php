@@ -1,7 +1,7 @@
 <?php
 // Si la valeur envoyé depuis AJAX existe
 if( isset( $_POST['choixTable'] )){
-    // Si elle n'est pas vide (inutile car en fait 'isset()' le test déja
+    // Si elle n'est pas vide (inutile car en fait 'isset()' le test déja)
     if( !empty($_POST['choixTable'])){
         
         // Je récupère la valeur envoyé
