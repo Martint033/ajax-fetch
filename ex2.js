@@ -11,8 +11,9 @@ document.querySelector("form").addEventListener("submit", function(e){
         // l'Url du fichier PHP
         const urlPHP = "ex2.php";
         var data = new FormData();
-        // les données qu'on va envoyer on au PHP c'est à dire .append('clé', valeur)
-        // il suffira de récuperer en PHP $_POST['clé']
+        // Les données qu'on va envoyer on au PHP c'est à dire .append('clé', valeur)
+        // Il suffira de récuperer en PHP $_POST['clé']
+        // Si vous voulez envoyer plusieurs variables au PHP il suffira d'ajouter d'autres lignes : data.append('autreClé', autreValeur);
         data.append("choixTable", document.querySelector("input").value);
         
         var paramAjax = {
