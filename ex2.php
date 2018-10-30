@@ -12,7 +12,7 @@ if( isset( $_POST['choixTable'] )){
             $tab[] = $i ."*". $choixTableUser ." = ".( $i * $choixTableUser );
         }
         
-        // Puis je le renvois au JS sous le format json (très utile pour passer des données d'un langage à l'autre
+        // Puis je le renvois au JS sous le format json (très utile pour passer des données d'un langage à l'autre)
         // !!!!! attention, seul le premier echo ou var_dump ou autre chose du même type sera renvoyer (au même titre qu'un return dans une fonction)
         echo json_encode( $tab );
         
