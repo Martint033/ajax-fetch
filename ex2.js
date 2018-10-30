@@ -8,24 +8,30 @@ document.querySelector("form").addEventListener("submit", function(e){
         alert ("Entrer un nombre");
     }
     else{
-        // l'Url du fichier PHP
+        // le chemin vers le fichier PHP
         const urlPHP = "ex2.php";
+        // La variable qui sera envoyés dans la requète doit être de type FormData()
         var data = new FormData();
         // Les données qu'on va envoyer on au PHP c'est à dire .append('clé', valeur)
         // Il suffira de récuperer en PHP $_POST['clé']
         // Si vous voulez envoyer plusieurs variables au PHP il suffira d'ajouter d'autres lignes : data.append('autreClé', autreValeur);
         data.append("choixTable", document.querySelector("input").value);
         
+        // Les paramètres de la requète
         var paramAjax = {
+            // La méthode d'envois des données au PHP (pourrais être "GET" par exemple) 
             method : "POST",
+            // Pour ajouter les variables et leurs valeur dans la requète 
             body : data
         };
 
         // On envoie la requète au serveur puis quand vient la reponse
         fetch(urlPHP, paramAjax).then(function(response){
+            
             // On la convertis depuis son format json
             // Astuce : si vous avez une erreur liés au contenu du json remplacé la ligne d'en desssous par : return response.text(); (c'est le contenu dans la réponse en brut, sans conversion) 
             return response.json();
+            
             // Puis on traite la réponse
         }).then (function (response){
             var html = "";
@@ -38,22 +44,3 @@ document.querySelector("form").addEventListener("submit", function(e){
         })
     }
 });
-
-
-
-// function multiplicateur(){
-//         fetch("ex1.php"
-//         // , {
-//         //     method:"POST",
-//         //     body:JSON.stringify()
-//         // }
-//     ).then(function (response){
-//                 return response.text();
-//             }).then(function(response){
-//                 console.log("bon...");
-//                 document.getElementById("result").innerHTML += response;     
-//             })
-//     }
-
-//     multiplicateur();
-
