@@ -1,4 +1,6 @@
+// Je recupère l'evenement de submit du formulaire
 document.querySelector("form").addEventListener("submit", function(e){
+    // J'annule le traitement automatique du submit
     e.preventDefault();
 
     // Je teste si la valeur et un chiffre et qu'elle n'est pas vide
