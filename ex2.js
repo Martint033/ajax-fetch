@@ -1,12 +1,16 @@
 document.querySelector("form").addEventListener("submit", function(e){
     e.preventDefault();
 
+    // Je teste si la valeur et un chiffre et qu'elle n'est pas vide
     if (isNaN(document.querySelector("input").value) || document.querySelector("input").value.length == 0){
         alert ("Entrer un nombre");
     }
     else{
+        // l'Url du fichier PHP
         const urlPHP = "ex2.php";
         var data = new FormData();
+        // les données qu'on va envoyer on au PHP c'est à dire .append('clé', valeur)
+        // il suffira de récuperer en PHP $_POST['clé']
         data.append("choixTable", document.querySelector("input").value);
         
         var paramAjax = {
@@ -14,8 +18,11 @@ document.querySelector("form").addEventListener("submit", function(e){
             body : data
         };
 
+        // On envoie la requète au serveur puis quand vient la reponse
         fetch(urlPHP, paramAjax).then(function(response){
+            // On la convertis depuis son format json
             return response.json();
+            // Puis on traite la réponse
         }).then (function (response){
             var html = "";
             for (index in response){
