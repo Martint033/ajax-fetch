@@ -1,7 +1,7 @@
 // Je recupère l'evenement de submit du formulaire
-document.querySelector("form").addEventListener("submit", function(e){
+document.querySelector("form").addEventListener("submit", function(event){
     // J'annule le traitement automatique du submit
-    e.preventDefault();
+    event.preventDefault();
 
     // Je teste si la valeur et un chiffre et qu'elle n'est pas vide
     if (isNaN(document.querySelector("input").value) || document.querySelector("input").value.length == 0){
